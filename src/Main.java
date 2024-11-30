@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
 
@@ -13,15 +14,18 @@ public class Main {
         boolean nameBoolean;
 //          Condition 4: Here the Translator object;
         Map translatorMap1 = Translator.translatorMap(keyArray, valueArray);
-//        // HashMap<Integer, String> Translator.translatorMap = new HashMap<>();
-//                  print the returned map
         System.out.println("Main class prints: " + translatorMap1);
 //          Condition 5: Here the scanner object;
 //        ?? No clue yet what they mean with scanner
+//        After some search: So, the scanner is the function that asks the user to give the input
 
-//        Condition
 
-
+        Scanner inputUser = new Scanner(System.in);
+        int input1 = 0;
+        System.out.println("What number between 0 and 9 do you want me to translate?");
+        input1 = inputUser.nextInt();
+        System.out.println("The number you gave me is: " + input1 + " and the translation is " + translatorMap1.get(input1)+ ".");
     }
+
 
 }

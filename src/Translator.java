@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.Scanner;
+
 //              Condiiton6: 1 Translator class
 public class Translator {
 
@@ -21,44 +23,47 @@ public class Translator {
 //              Determine if the array is empty
         else if (keyArraySize == 0) {
             return new HashMap();
-        }
-        else {
+        } else {
             System.out.println("The array of both key and value is " + keyArraySize + " items long.");
         }
 
-//              Condition7: Hashmap variable
+//              Condition7: Hashmap variable translatorMap
 //              Develop a new HashMap with the types of both arrays (Integer) and (String)
         HashMap<Integer, String> translatorMap = new HashMap<Integer, String>();
 
 //        Fill the new Hashmap variable with the keys and values from the arrays
         int i = 0;
-        while (i<keyArraySize) {
+        while (i < keyArraySize) {
             translatorMap.put(keyArray[i], valueArray[i]);
             i++;
             System.out.println("Translator-class prints: " + translatorMap);
         }
 //        Condition9: Translate function/method
-//        This means: get the key (input), check if key is present,
-//        if present return value connected to the key into a variable
-//        Next step would be to deliver variable
+//        This means: get the key (input), assign the key to a variable,
+//        check if key is present, if present return value connected to the key
 
-        // Get the key (input)
 
-        //  check the key
-        if (translatorMap.containsKey(0)) {
+//
+//        Get the key (input from user so ask a question)
+        System.out.println("What number between 0 and 9 do you want me to translate?");
+        Scanner inputUser = new Scanner(System.in);
+//        assign key to variable, the key is the input from the user
+        int input1 = 0; // declare the variable and give it a value
+        input1 = inputUser.nextInt();
+//        check the key
+        if (translatorMap.containsKey(input1)) {
             String mapValue;
-            // searching the map and return the value to the variable
-            mapValue = translatorMap.get(0);
-            System.out.println("The alphabetical-name corresponding to the number " + keyArray[0] + " is " + mapValue);
+//        searching the map and return the value to the variable
+            mapValue = translatorMap.get(input1);
+            System.out.println("The alphabetical-name corresponding to the number " + input1 + " is " + mapValue + ".");
+        } else {
+            System.out.println("The number you gave me is not in between 0 and 9.");
         }
+
 
         return translatorMap;
 
-
-
     }
 }
-
-
 
 
