@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-//              Condiiton6: 1 Translator class
+//              Condiiton: 6 Translator class
 public class Translator {
 
 
@@ -36,28 +36,29 @@ public class Translator {
         while (i < keyArraySize) {
             translatorMap.put(keyArray[i], valueArray[i]);
             i++;
+            // we will print each step to make sure that we can check the proces
             System.out.println("Translator-class prints: " + translatorMap);
+
         }
 //        Condition9: Translate function/method
 //        This means: get the key (input), assign the key to a variable,
 //        check if key is present, if present return value connected to the key
-
-
 //
 //        Get the key (input from user so ask a question)
         System.out.println("What number between 0 and 9 do you want me to translate?");
         Scanner inputUser = new Scanner(System.in);
 //        assign key to variable, the key is the input from the user
         int input1 = 0; // declare the variable and give it a value
-        input1 = inputUser.nextInt();
+        input1 = inputUser.nextInt(); // assign the number from the user to the variable
 //        check the key
         if (translatorMap.containsKey(input1)) {
             String mapValue;
-//        searching the map and return the value to the variable
+//        searching the map based on the key-value combination and
+//        return the value to the variable
             mapValue = translatorMap.get(input1);
             System.out.println("The alphabetical-name corresponding to the number " + input1 + " is " + mapValue + ".");
         } else {
-            System.out.println("The number you gave me is not in between 0 and 9.");
+            System.out.println("The number you gave me is not between 0 and 9.");
         }
 
 
